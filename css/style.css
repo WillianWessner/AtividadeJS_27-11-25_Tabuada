@@ -8,3 +8,29 @@
     max-height: 400px; /* Definindo altura máxima para o scroll */
     overflow-y: auto; /* Adiciona scroll vertical se o conteúdo for maior que 400px */
 }
+
+/* Estiliza a lista não ordenada que será injetada pelo JS */
+#resultado-container ul {
+    list-style: none; /* Remove os pontos da lista */
+    padding: 0;
+    margin: 0;
+}
+
+/* Estiliza cada item da lista (cada linha da tabuada) */
+#resultado-container ul li {
+    padding: 8px 12px;
+    margin-bottom: 4px;
+    background-color: #e0f2fe; /* Light blue background */
+    border-radius: 6px;
+    font-size: 1.1rem;
+    color: #0b5394; /* Darker blue text */
+    transition: background-color 0.2s;
+}
+
+#resultado-container ul li:nth-child(even) {
+    background-color: #dbeafe; /* Alternating lighter background for readability */
+}
+
+#resultado-container ul li:hover {
+    background-color: #bfdbfe; /* Highlight on hover */
+}
