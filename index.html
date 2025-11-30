@@ -3,60 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Gerador de Tabuada</title>
+    <!-- 1. Carregamento do Tailwind CSS para utilitários de estilo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="img/logo.png" alt="Logo Tabuada" height="40">
-                    </a>
+<body class="bg-gray-200 font-sans min-h-screen flex itens-start justify-center pt-10">
+    <div class="bg-white p-8 rounded-xl shadow-3x1 w-full max-w-xl space-y-6 transform transition-all duration-300">
+
+        <!-- Título -->
+         <h1 class="text-3x1 font-extrabold text-blue-800 text-center">🔢 Gerador de Tabuada</h1>
+         <p class="text-center text-gray-500">Insira um número e defina o limite de multiplicação.</p>
+
+        <!-- Seção de Inputs -->
+        <div class="space-y-4">
+            <!-- Campo 1: Multiplicando -->
+            <div>
+                <label for="multiplicando" class="block text-sm font-medium text-gray-700 mb-1">
+                    Número (Multiplicando):
+                </label>
+                <input type="number" id="multiplicando" value="1" min="1" class="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus-border-blue-500 transition duration-150">
             </div>
-        </nav>
-    </header>
-    <section id="recursos" class="py-5 mt-5 bg-warning min-vh-100">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 col-xl-6">
 
-                <h1 class="text-center mb-5 display-4 fw-bold">🔢 Gerador de Tabuada</h1>
-
-                <div class="card p-4 shadow">
-
-                    <div class="container">
-                        <div class="row mb-3">
-
-                            <div class="col-md-6 mb-3">
-                                <label for="multiplicando" class="form-label">Número (Multiplicando):</label>
-                                <input type="number" id="multiplicando" value="1" min="1" class="form-control">
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="maxMultiplicador" class="form-label">Multiplicar até (Máximo Multiplicador):</label>
-                                <input type="number" id="maxMultiplicador" value="1" min="1" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="d-grid gap-2">
-                            <button onclick="gerarTabuada()" class="btn btn-success btn-lg">Gerar Tabuada</button>
-                        </div>
-                    </div>
-                </div>
-
-                <h2 class="mt-4 text-secondary text-center">Resultado:</h2>
-
-                <div class="container">
-                    <div id="resultado-tabuada" class="list-group shadow-sm">
-                        <div class="list-group-item text-muted">Insira um número e clique em "Gerar Tabuada".</div>
-                    </div>
-                </div>
+            <!-- Campo 2: Multiplicador Máximo -->
+            <div>
+                <label for="maxMultiplicador" class="block text-sm font-medium text-gray-700 mb-1">
+                    Multiplicar até (Máximo Multplicador):
+                </label>
+                <input type="number" id="maxMultiplicador" value="1" min="1" class="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus-border-blue-500 transition duration-150">
             </div>
+
+            <!-- Botão de Ação -->
+            <button onclick="gerarTabuada()" class="w-full bg-blue-300 text-blue-1000 p-3 rounded-xl font-semibold hover:bg-blue-500 transition duration-200 shadow-lg transform hover:scale-[1.01]">
+                Gerar Tabuada
+            </button>
         </div>
 
-    </section>
+        <!-- Seção de Resultados -->
+        <div>
+            <h2 class="text-xl font-bold text-blue-700 mb-3 border-b pb-1">Resultados:</h2>
+            <!-- Área onde o JavaScript injetará a lista <ul> -->
+            <div id="resultado-container" class="bg-blue-100 p-4 rounded-xl border border-blue-200">
+                <p id="mensagem-inicial" class="text-gray-500 italic">A tabuada aparecerá aqui.</p>
+            </div>
+        </div>
+    </div>
 
+       
     <script src="js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

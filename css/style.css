@@ -1,0 +1,10 @@
+/*
+ * Este arquivo contém estilos adicionais para a calculadora.
+ * A maior parte do layout e responsividade é feita pelo Tailwind CSS no HTML.
+ */
+
+/* Estilo para a lista de resultados */
+#resultado-container {
+    max-height: 400px; /* Definindo altura máxima para o scroll */
+    overflow-y: auto; /* Adiciona scroll vertical se o conteúdo for maior que 400px */
+}
